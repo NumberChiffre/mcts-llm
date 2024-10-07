@@ -7,8 +7,6 @@
   <a href="https://pypi.org/project/mcts-llm/"><img src="https://img.shields.io/pypi/v/mcts-llm.svg" alt="PyPI"></a>
   <a href="https://github.com/stanfordnlp/dspy/releases/tag/2.4.17"><img src="https://img.shields.io/badge/dspy-2.4.17-blue" alt="DSPy"></a>
   <a href="https://codecov.io/github/NumberChiffre/mcts-llm"><img src="https://codecov.io/github/NumberChiffre/mcts-llm/graph/badge.svg?token=zOL5kP7Xf9"/></a>
-  <a href="https://black.readthedocs.io/en/stable/"><img src="https://img.shields.io/badge/Code%20Style-Black-black.svg?labelColor=gray" alt="Black"></a>
-  <a href="https://github.com/numberchiffre/mcts-llm/stargazers"><img src="https://img.shields.io/github/stars/numberchiffre/mcts-llm?style=social" alt="GitHub stars"></a>
 </p>
 
 **MCTS + LLM + Prompt Engineering => Enhanced LLM Reponse Quality** 🌲📝✨
