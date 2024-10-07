@@ -4,8 +4,9 @@
 
 <p>
   <a href="https://www.python.org/downloads/release/python-3127/"><img src="https://img.shields.io/badge/-Python_3.12+-blue?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://pypi.org/project/mcts-llm/"><img src="https://img.shields.io/pypi/v/mcts-llm.svg" alt="PyPI"></a>
   <a href="https://github.com/stanfordnlp/dspy/releases/tag/2.4.17"><img src="https://img.shields.io/badge/dspy-2.4.17-blue" alt="DSPy"></a>
-  <a href="https://codecov.io/github/NumberChiffre/mcts-llm"><img src="https://codecov.io/github/NumberChiffre/mcts-llm/graph/badge.svg?token=OonzGi54TC"/></a>
+  <a href="https://codecov.io/github/NumberChiffre/mcts-llm"><img src="https://codecov.io/github/NumberChiffre/mcts-llm/graph/badge.svg?token=zOL5kP7Xf9"/></a>
   <a href="https://black.readthedocs.io/en/stable/"><img src="https://img.shields.io/badge/Code%20Style-Black-black.svg?labelColor=gray" alt="Black"></a>
   <a href="https://github.com/numberchiffre/mcts-llm/stargazers"><img src="https://img.shields.io/github/stars/numberchiffre/mcts-llm?style=social" alt="GitHub stars"></a>
 </p>
@@ -21,30 +22,30 @@
 
 <br>
 
-## 🚀 Key Features
-
-- **DSPy Compatibility**: Seamless integration with the DSPy framework for prompt engineering with LLMs.
-- **LLM Tracing**: Compatible with Arize AI's Phoenix for visualizing search trees.
-
-<br>
-
 
 ## 🛠️ Installation
-### Environment variables
-Create a `.env` file with the following variables:
-```
-OPENAI_API_KEY=<your-openai-api-key>
-DEEPSEEK_API_KEY=<your-ollama-api-key>
-DEEPSEED_BASE_URL=<your-deepseed-base-url>
-ARIZE_PHOENIX_PORT=6006
-ARIZE_PHOENIX_ENDPOINT=http://phoenix:6006/v1/traces
-OLLAMA_BASE_URL=http://host.docker.internal:11434
+
+### PyPI
+```shell
+pip install mcts-llm
 ```
 
 ### Docker
-```shell
-make build
+Create a `.env` file with the following variables:
 ```
+OPENAI_API_KEY=<your-openai-api-key>
+DEEPSEEK_API_KEY=<your-deepseek-api-key>
+DEEPSEEK_BASE_URL=<your-deepseek-base-url>
+OLLAMA_BASE_URL=http://host.docker.internal:11434
+```
+
+Build the docker container:
+
+```shell
+cd mcts-llm
+make debug
+```
+
 <br>
 
 ## 🚀 Run
@@ -74,9 +75,6 @@ print(f"MCStr answer: {mctsr_answer}")
 make debug
 python examples/demo.py
 ```
-Full LLM trace visualization with Phoenix can be viewed [here](http://localhost:6006/).
-
-![alt text](assets/trace.png)
 
 <br>
 

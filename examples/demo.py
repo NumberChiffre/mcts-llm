@@ -1,10 +1,9 @@
-import math
 import os
 
 import dspy
 from dotenv import load_dotenv
 
-from mcts_llm.mctsr import MCTSr, MultipleTurnSelfRefine, Policy, ZeroShotCoT
+from mcts_llm.mctsr import MCTSr, MultipleTurnSelfRefine, ZeroShotCoT
 
 load_dotenv()
 
@@ -34,6 +33,6 @@ if __name__ == "__main__":
     multiple_turn_self_refine_answer = multiple_turn_self_refine(problem).answer
     print(f"Multiple-Turn Self-Refine answer: {multiple_turn_self_refine_answer}")
 
-    mctsr = MCTSr(c=math.sqrt(2), samples_per_node=4, policy=Policy.GREEDY)
+    mctsr = MCTSr()
     mctsr_answer = mctsr(problem).answer
     print(f"MCStr answer: {mctsr_answer}")

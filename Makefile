@@ -20,8 +20,25 @@ setup:
 format:
 	pre-commit run -a
 
-build:
-	docker-compose build --build-arg INSTALL_DEV=true
+build-package:
+	poetry build
+
+publish-test:
+	poetry publish -r testpypi
+
+publish:
+	poetry publish
+
+version-bump:
+	@if [ "$(BUMP)" = "" ]; then \
+		echo "Please specify BUMP as patch, minor, or major"; \
+		exit 1; \
+	fi
+	poetry version $(BUMP)
+	@echo "Version bumped to $$(poetry version -s)"
+	@echo "Don't forget to commit the changes and create a new tag!"
+
+release: clean build-package publish
 
 debug:
 	docker-compose build --build-arg INSTALL_DEV=true

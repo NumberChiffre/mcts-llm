@@ -19,7 +19,6 @@ classifiers = [
 python = ">=3.12,<3.13"
 dspy-ai = "2.4.17"
 python-dotenv = "^1.0.1"
-matplotlib = "^3.9.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
