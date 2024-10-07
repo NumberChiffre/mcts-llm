@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "mcts-llm"
+version = "0.1.0"
+description = "MCTS + LLM + Prompt Engineering => Enhanced LLM Reponse Quality."
+authors = ["NumberChiffre <llebox@hotmail.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/numberchiffre/mcts-llm"
+repository = "https://github.com/numberchiffre/mcts-llm"
+documentation = "https://github.com/numberchiffre/mcts-llm#readme"
+keywords = ["mcts", "llm", "dspy", "prompt-engineering"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+dspy-ai = "2.4.17"
+python-dotenv = "^1.0.1"
+matplotlib = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+
+[tool.pytest.ini_options]
+addopts = "--cov=mcts_llm --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+omit = [
+    "mcts_llm/logger.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "pass",
+    "abc.abstractmethod",
+    "@abstractmethod"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/numberchiffre/mcts-llm/issues"

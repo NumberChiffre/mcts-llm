@@ -1,0 +1,18 @@
+x-dev_volumes: &common_volumes
+  - ./mcts_llm:/home/app/mcts_llm
+  - ./scripts:/home/app/scripts
+  - ./tests:/home/app/tests
+  - ./poetry.lock:/home/app/poetry.lock
+  - ./pyproject.toml:/home/app/pyproject.toml
+
+services:
+  ci:
+    container_name: mcts-llm-ci
+    build:
+      target: ci
+      context: .
+      dockerfile: Dockerfile
+    volumes: *common_volumes
+    env_file: .env.ci
+    stdin_open: true
+    tty: true

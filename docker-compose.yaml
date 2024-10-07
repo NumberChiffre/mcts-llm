@@ -1,0 +1,29 @@
+x-dev_volumes: &common_volumes
+  - ./examples:/home/app/examples
+  - ./notebooks:/home/app/notebooks
+  - ./mcts_llm:/home/app/mcts_llm
+  - ./scripts:/home/app/scripts
+  - ./tests:/home/app/tests
+  - ./poetry.lock:/home/app/poetry.lock
+  - ./pyproject.toml:/home/app/pyproject.toml
+
+networks:
+  mcts-llm:
+    name: mcts-llm
+    driver: bridge
+
+services:
+  dev:
+    container_name: mcts-llm
+    build:
+      target: dev
+      context: .
+      dockerfile: Dockerfile
+      args:
+        INSTALL_DEV: ${INSTALL_DEV-true}
+    volumes: *common_volumes
+    env_file: .env
+    stdin_open: true
+    tty: true
+    networks:
+      - mcts-llm

@@ -1,0 +1,52 @@
+name: Unit Tests and Coverage
+
+on:
+  push:
+    branches:
+      - main
+      - '**/**'
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Pull LFS files
+      run: git lfs pull
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      with:
+        driver-opts: |
+          network=host
+
+    - name: Login to ghcr
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install Docker Compose
+      run: |
+        sudo curl -L "https://github.com/docker/compose/releases/download/v2.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        sudo chmod +x /usr/local/bin/docker-compose
+        docker-compose --version
+
+    - name: Build Docker container and generate codecov report
+      run: |
+        make run-ci
+        docker cp $(docker ps -aqf "name=mcts-llm-ci"):/home/app/coverage.xml ./coverage.xml
+
+    - name: Upload coverage from test to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
