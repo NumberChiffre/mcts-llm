@@ -1,0 +1,42 @@
+{
+  "zero_shot.cot": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature_instructions": "Given the fields `problem`, produce the fields `answer`.",
+    "signature_prefix": "Answer:",
+    "extended_signature_instructions": "Given the fields `problem`, produce the fields `answer`.",
+    "extended_signature_prefix": "Answer:"
+  },
+  "critique": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature_instructions": "Given the fields `problem`, `current_answer`, produce the fields `critique`.",
+    "signature_prefix": "Critique:",
+    "extended_signature_instructions": "Given the fields `problem`, `current_answer`, produce the fields `critique`.",
+    "extended_signature_prefix": "Critique:"
+  },
+  "evaluate": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature_instructions": "Given the fields `problem`, `answer`, produce the fields `score`.",
+    "signature_prefix": "Score:",
+    "extended_signature_instructions": "Given the fields `problem`, `answer`, produce the fields `score`.",
+    "extended_signature_prefix": "Score:"
+  },
+  "refine": {
+    "lm": null,
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature_instructions": "Given the fields `problem`, `current_answer`, `critique`, produce the fields `answer`.",
+    "signature_prefix": "Answer:",
+    "extended_signature_instructions": "Given the fields `problem`, `current_answer`, `critique`, produce the fields `answer`.",
+    "extended_signature_prefix": "Answer:"
+  }
+}
