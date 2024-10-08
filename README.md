@@ -5,6 +5,7 @@
 <p>
   <a href="https://www.python.org/downloads/release/python-3127/"><img src="https://img.shields.io/badge/-Python_3.12+-blue?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://pypi.org/project/mcts-llm/"><img src="https://img.shields.io/pypi/v/mcts-llm.svg" alt="PyPI"></a>
+  <a href="https://pepy.tech/project/mcts-llm"><img src="https://static.pepy.tech/badge/mcts-llm/month" alt="Downloads"></a>
   <a href="https://github.com/stanfordnlp/dspy/releases/tag/2.4.17"><img src="https://img.shields.io/badge/dspy-2.4.17-blue" alt="DSPy"></a>
   <a href="https://codecov.io/github/NumberChiffre/mcts-llm"><img src="https://codecov.io/github/NumberChiffre/mcts-llm/graph/badge.svg?token=zOL5kP7Xf9"/></a>
 </p>
