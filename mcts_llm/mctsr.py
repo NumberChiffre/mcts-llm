@@ -45,6 +45,14 @@ class CritiqueAnswer(dspy.Signature):
 
 
 class RefineAnswer(dspy.Signature):
+    """[[ ## proposed_instruction ## ]] Given a mathematical problem, a current answer, and a critique of that answer,
+    refine the current answer to provide a more accurate and well-reasoned solution. Begin by carefully analyzing the
+    problem and the critique, then think step by step to derive the correct answer. Ensure that your reasoning is clear
+    and logical, and that the final answer is justified by the steps taken.
+
+    [[ ## completed ## ]]
+    """
+
     problem: str = dspy.InputField()
     current_answer: str = dspy.InputField()
     critique: str = dspy.InputField()
@@ -59,7 +67,7 @@ class EvaluateAnswer(dspy.Signature):
 
 class ZeroShotCoT(dspy.Module):
     def __init__(self):
-        self.cot = dspy.ChainOfThought(ZeroShotAnswer)
+        self.cot = dspy.TypedChainOfThought(ZeroShotAnswer)
 
     def forward(self, problem) -> dspy.Prediction:
         return dspy.Prediction(answer=self.cot(problem=problem).answer)
@@ -69,8 +77,8 @@ class MultipleTurnSelfRefine(dspy.Module):
     def __init__(self, num_turns: int = 1):
         super().__init__()
         self.zero_shot_cot = ZeroShotCoT()
-        self.critique_answer = dspy.ChainOfThought(CritiqueAnswer)
-        self.refine_answer = dspy.ChainOfThought(RefineAnswer)
+        self.critique_answer = dspy.TypedChainOfThought(CritiqueAnswer)
+        self.refine_answer = dspy.TypedChainOfThought(RefineAnswer)
         self.num_turns = num_turns
 
     def forward(self, problem) -> dspy.Prediction:
@@ -140,9 +148,9 @@ class MCTSr(MCTS, dspy.Module, metaclass=CombinedMeta):
         self.samples_per_node = samples_per_node
 
         self.zero_shot = ZeroShotCoT()
-        self.critique = dspy.ChainOfThought(CritiqueAnswer)
-        self.evaluate = dspy.ChainOfThought(EvaluateAnswer)
-        self.refine = dspy.ChainOfThought(RefineAnswer)
+        self.critique = dspy.TypedChainOfThought(CritiqueAnswer)
+        self.evaluate = dspy.TypedChainOfThought(EvaluateAnswer)
+        self.refine = dspy.TypedChainOfThought(RefineAnswer)
 
     def initialize(self, S: MCTSrState) -> MCTSrNode:
         if self.initialize_strategy == InitializeStrategy.ZERO_SHOT:

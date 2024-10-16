@@ -24,7 +24,7 @@ def mock_parse_integer_answer():
 
 @pytest.fixture
 def mock_chain_of_thought():
-    with patch("dspy.ChainOfThought") as mock:
+    with patch("dspy.TypedChainOfThought") as mock:
         mock_instance = Mock()
         mock_instance.return_value = Mock(answer="Mocked answer", critique="Mock critique")
         mock.return_value = mock_instance
@@ -57,7 +57,7 @@ def mctsr(mock_parse_integer_answer, mock_chain_of_thought):
 
 
 def test_zero_shot_cot():
-    with patch("mcts_llm.mctsr.dspy.ChainOfThought") as mock_chain_of_thought:
+    with patch("mcts_llm.mctsr.dspy.TypedChainOfThought") as mock_chain_of_thought:
         mock_cot = Mock()
         mock_chain_of_thought.return_value = mock_cot
         mock_cot.return_value = dspy.Prediction(answer="Test answer")
@@ -72,7 +72,7 @@ def test_zero_shot_cot():
 
 @pytest.mark.parametrize("num_turns", [1, 3])
 def test_multiple_turn_self_refine(num_turns):
-    with patch("mcts_llm.mctsr.dspy.ChainOfThought") as mock_chain_of_thought:
+    with patch("mcts_llm.mctsr.dspy.TypedChainOfThought") as mock_chain_of_thought:
         mock_zero_shot = Mock()
         mock_critique = Mock()
         mock_refine = Mock()
