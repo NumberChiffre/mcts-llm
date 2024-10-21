@@ -538,13 +538,13 @@ files = [
 
 [[package]]
 name = "dspy"
-version = "2.5.7"
+version = "2.5.14"
 description = "DSPy"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dspy-2.5.7-py3-none-any.whl", hash = "sha256:2b90689ae8de9fe7b16687649d1c137abff724c0b33817fa5228412e95a38294"},
-    {file = "dspy-2.5.7.tar.gz", hash = "sha256:6863f1b9bc561ce272dbcb015954582c0371c9da65e86e22f59880b418e618d5"},
+    {file = "dspy-2.5.14-py3-none-any.whl", hash = "sha256:33c22bd15ad49561fa8ca3f5dee626db519eea15014d9184eed0d3661593859e"},
+    {file = "dspy-2.5.14.tar.gz", hash = "sha256:7d69ae67f257d7189092dc309d79b9f29dabfd7c7f06412a9f1a2fc824ca37a1"},
 ]
 
 [package.dependencies]
@@ -553,7 +553,7 @@ datasets = "*"
 diskcache = "*"
 httpx = "*"
 joblib = ">=1.3,<2.0"
-litellm = "*"
+litellm = "<=1.49.1"
 magicattr = ">=0.1.6,<0.2.0"
 openai = "*"
 optuna = "*"
@@ -585,17 +585,17 @@ weaviate = ["weaviate-client (>=4.6.5,<4.7.0)"]
 
 [[package]]
 name = "dspy-ai"
-version = "2.5.7"
+version = "2.5.14"
 description = "DSPy"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dspy-ai-2.5.7.tar.gz", hash = "sha256:a9cdc734c8db2195c219ab95e3d3ea3a6f6589ebc3ff6a193f9838c6ccf194db"},
-    {file = "dspy_ai-2.5.7-py3-none-any.whl", hash = "sha256:c6213aa38fa50fe19ce711870037676ef22ef3146fba4c634948225e0f731a0b"},
+    {file = "dspy-ai-2.5.14.tar.gz", hash = "sha256:9cd7a1369301a13dc77a378e6a7d7762ce55ed5db4872054ac95ca5b6a563beb"},
+    {file = "dspy_ai-2.5.14-py3-none-any.whl", hash = "sha256:fc9156315f46dbde235a6d78a9695ff311e7a4dfa7ae92beb57c51ae5703675a"},
 ]
 
 [package.dependencies]
-dspy = "2.5.7"
+dspy = "2.5.14"
 
 [[package]]
 name = "filelock"
@@ -1113,13 +1113,13 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "litellm"
-version = "1.49.2"
+version = "1.49.1"
 description = "Library to easily interface with LLM API providers"
 optional = false
 python-versions = "!=2.7.*,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,>=3.8"
 files = [
-    {file = "litellm-1.49.2-py3-none-any.whl", hash = "sha256:fa098963bb95fbe61fe3af24bfd020dd318b5483184ff8bd9c26b7938a47e298"},
-    {file = "litellm-1.49.2.tar.gz", hash = "sha256:f3a493264aae492fc292bb86c88b0c929c0b13267162272183727ce4a99e3859"},
+    {file = "litellm-1.49.1-py3-none-any.whl", hash = "sha256:2ba6689fe4ea3b0d69f56f2843caff6422497489e6252943b13ef1463f016728"},
+    {file = "litellm-1.49.1.tar.gz", hash = "sha256:f51450ad823c8bdf057017009ae8bcce1a2810690b2f0d9dcdaff04ddc68209a"},
 ]
 
 [package.dependencies]
