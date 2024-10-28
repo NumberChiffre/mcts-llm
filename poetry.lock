@@ -538,13 +538,13 @@ files = [
 
 [[package]]
 name = "dspy"
-version = "2.5.7"
+version = "2.5.18"
 description = "DSPy"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dspy-2.5.7-py3-none-any.whl", hash = "sha256:2b90689ae8de9fe7b16687649d1c137abff724c0b33817fa5228412e95a38294"},
-    {file = "dspy-2.5.7.tar.gz", hash = "sha256:6863f1b9bc561ce272dbcb015954582c0371c9da65e86e22f59880b418e618d5"},
+    {file = "dspy-2.5.18-py3-none-any.whl", hash = "sha256:9ca8ced57646c3978c92a7e63cab39646d86e9f89826598963f0c7fa3d21fd80"},
+    {file = "dspy-2.5.18.tar.gz", hash = "sha256:bf67c61b51fb61234a12d7947820f543545ced4e3570f6e9bd5fca6d7c0c710c"},
 ]
 
 [package.dependencies]
@@ -553,7 +553,8 @@ datasets = "*"
 diskcache = "*"
 httpx = "*"
 joblib = ">=1.3,<2.0"
-litellm = "*"
+json-repair = "*"
+litellm = "<=1.49.1"
 magicattr = ">=0.1.6,<0.2.0"
 openai = "*"
 optuna = "*"
@@ -585,17 +586,17 @@ weaviate = ["weaviate-client (>=4.6.5,<4.7.0)"]
 
 [[package]]
 name = "dspy-ai"
-version = "2.5.7"
+version = "2.5.18"
 description = "DSPy"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dspy-ai-2.5.7.tar.gz", hash = "sha256:a9cdc734c8db2195c219ab95e3d3ea3a6f6589ebc3ff6a193f9838c6ccf194db"},
-    {file = "dspy_ai-2.5.7-py3-none-any.whl", hash = "sha256:c6213aa38fa50fe19ce711870037676ef22ef3146fba4c634948225e0f731a0b"},
+    {file = "dspy-ai-2.5.18.tar.gz", hash = "sha256:4c86c0c47a1969694c9205bc0b0729095657d354225efa7c48da1bd9afc8fd2d"},
+    {file = "dspy_ai-2.5.18-py3-none-any.whl", hash = "sha256:caeaa94dcb1b086479e05cdfe3c381f6bb61bbbe01effef4bfa086aa99aa64c1"},
 ]
 
 [package.dependencies]
-dspy = "2.5.7"
+dspy = "2.5.18"
 
 [[package]]
 name = "filelock"
@@ -1077,6 +1078,17 @@ files = [
 ]
 
 [[package]]
+name = "json-repair"
+version = "0.30.0"
+description = "A package to repair broken json strings"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "json_repair-0.30.0-py3-none-any.whl", hash = "sha256:bda4a5552dc12085c6363ff5acfcdb0c9cafc629989a2112081b7e205828228d"},
+    {file = "json_repair-0.30.0.tar.gz", hash = "sha256:24f12087a0e385ed47207eab1fca12bffd473e48db5bb803793d6c4fd97377ce"},
+]
+
+[[package]]
 name = "jsonschema"
 version = "4.23.0"
 description = "An implementation of JSON Schema validation for Python"
@@ -1113,13 +1125,13 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "litellm"
-version = "1.49.2"
+version = "1.49.1"
 description = "Library to easily interface with LLM API providers"
 optional = false
 python-versions = "!=2.7.*,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,>=3.8"
 files = [
-    {file = "litellm-1.49.2-py3-none-any.whl", hash = "sha256:fa098963bb95fbe61fe3af24bfd020dd318b5483184ff8bd9c26b7938a47e298"},
-    {file = "litellm-1.49.2.tar.gz", hash = "sha256:f3a493264aae492fc292bb86c88b0c929c0b13267162272183727ce4a99e3859"},
+    {file = "litellm-1.49.1-py3-none-any.whl", hash = "sha256:2ba6689fe4ea3b0d69f56f2843caff6422497489e6252943b13ef1463f016728"},
+    {file = "litellm-1.49.1.tar.gz", hash = "sha256:f51450ad823c8bdf057017009ae8bcce1a2810690b2f0d9dcdaff04ddc68209a"},
 ]
 
 [package.dependencies]
