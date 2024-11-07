@@ -585,17 +585,17 @@ weaviate = ["weaviate-client (>=4.6.5,<4.7.0)"]
 
 [[package]]
 name = "dspy-ai"
-version = "2.5.7"
+version = "2.5.27"
 description = "DSPy"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "dspy-ai-2.5.7.tar.gz", hash = "sha256:a9cdc734c8db2195c219ab95e3d3ea3a6f6589ebc3ff6a193f9838c6ccf194db"},
-    {file = "dspy_ai-2.5.7-py3-none-any.whl", hash = "sha256:c6213aa38fa50fe19ce711870037676ef22ef3146fba4c634948225e0f731a0b"},
+    {file = "dspy-ai-2.5.27.tar.gz", hash = "sha256:fbc05461d5478c94c7efb001de05b9c8601ca087646d0e059954452114136e6a"},
+    {file = "dspy_ai-2.5.27-py3-none-any.whl", hash = "sha256:1bd441972ddffae9dd6141fb262be1c3ac9c700ee89fba5c22206d429c8bc29f"},
 ]
 
 [package.dependencies]
-dspy = "2.5.7"
+dspy = ">=2.5.3"
 
 [[package]]
 name = "filelock"
